@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Geometry Genius</title>
+</head>
+<body class="m-5">
+    <header class="flex items-center justify-between px-10 py-5 bg-[#E7F4FB]">
+        <div class="">
+            <h1 class="text-3xl font-semibold">Interactive</h1>
+            <h3 class="text-xl font-normal">Geometry Genius</h3>
+        </div>
+        <button class="px-4 py-2 bg-[#1090D8] rounded-lg">Blog</button>
+    </header>
+    <main class="flex flex-col md:flex-row mt-10 gap-5 ">
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- triangle card -->
+            <div class="w-auto  h-[450px] p-10 border border-gray-600 text-center space-y-3 hover:bg-[#FBBCED] flex flex-col items-center justify-cente">
+                <img src="images/triangle.png" alt="">
+                <h1 class="text-xl font-bold">Triangle</h1>
+                <p class="text-sm font-normal">Area (A) = 0.5 X b X h</p>
+                <div class="flex gap-2 items-center justify-center">
+                    <input id="triangle-base" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="b">
+                    <span>cm</span>
+                    <input id="triangle-height" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="h">
+                    <span>cm</span>
+                </div>
+                <p>Area is : <span id="triangle-span">0</span>cm <sup>2</sup></p>
+                <button onclick="triangle()" class="w-full bg-blue-700 py-3 text-white font-semibold">Calculation</button>
+            </div>
+
+            <!-- rectangle card -->
+            <div class="w-auto h-[450px] p-10 border border-gray-600 text-center space-y-3 hover:bg-[#FBBCED] flex flex-col items-center justify-cente">
+                <img src="images/rectangle.png" alt="">
+                <h1 class="text-xl font-bold">Rectangle</h1>
+                <p class="text-sm font-normal">Area (A) = w X l</p>
+                <div class="flex gap-2 items-center justify-center">
+                    <input id="rectangle-width" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="w">
+                    <span>cm</span>
+                    <input id="rectangle-length" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="l">
+                    <span>cm</span>
+                </div>
+                <p>Area is : <span id="rectangle-span">0</span>cm <sup>2</sup></p>
+                <button onclick="rectangleArea()" class="w-full bg-blue-700 py-3 text-white font-semibold">Calculation</button>
+            </div>
+
+            <!-- Parallelogram card -->
+            <div class="w-auto h-[450px] p-10 border border-gray-600 text-center space-y-3 hover:bg-[#FBBCED] flex flex-col items-center justify-center">
+                <img src="images/parallelogram.png" alt="" >
+                <h1 class="text-xl font-bold">Parallelogram</h1>
+                <p class="text-sm font-normal">Area (A) =  b X h</p>
+                <div class="flex gap-2 items-center justify-center">
+                    <input id="parallelogram-base" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="b">
+                    <span>cm</span>
+                    <input id="parallelogram-height" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="h">
+                    <span>cm</span>
+                </div>
+                <p>Area is : <span id="parallelogram-span">0</span>cm <sup>2</sup></p>
+                <button onclick="parallelogram()" class="w-full bg-blue-700 py-3 text-white font-semibold">Calculation</button>
+            </div>
+
+            <!-- rhombus -->
+            <div class="w-auto h-[450px] p-10 border border-gray-600 text-center space-y-3 hover:bg-[#FBBCED] flex flex-col items-center justify-center">
+                <img src="images/rhombus.png" alt="">
+                <h1 class="text-xl font-bold">Rhombus</h1>
+                <p class="text-sm font-normal">Area (A) =  0.5 X d <sub>1</sub> X d <sub>2</sub></p>
+                <div class="flex gap-2 items-center justify-center">
+                    <input id="value-of-d1" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="d1">
+                    <span>cm</span>
+                    <input id="value-of-d2" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="d2">
+                    <span>cm</span>
+                </div>
+                <p>Area is : <span id="rhombus-span">0</span>cm <sup>2</sup></p>
+                <button onclick="rhombus()" class="w-full bg-blue-700 py-3 text-white font-semibold">Calculation</button>
+            </div>
+
+            <!--  -->
+            <div class="w-auto h-[450px] p-10 border border-gray-600 text-center space-y-3 hover:bg-[#FBBCED] flex flex-col items-center justify-center">
+                <img src="images/pentagon.png" alt="">
+                <h1 class="text-xl font-bold">Pentagon</h1>
+                <p class="text-sm font-normal">Area (A) = 0.5 X p X b</p>
+                <div class="flex gap-2 items-center justify-center">
+                    <input id="pentagon-parameter" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="p">
+                    <span>cm</span>
+                    <input id="pentagon-base" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="b">
+                    <span>cm</span>
+                </div>
+                <p>Area is : <span id="pentagon-span">0</span>cm <sup>2</sup></p>
+                <button onclick="pentagon()" class="w-full bg-blue-700 py-3 text-white font-semibold">Calculation</button>
+            </div>
+
+            <!-- Ellipse card -->
+            <div class="w-auto h-[450px] p-10 border border-gray-600 text-center space-y-3 hover:bg-[#FBBCED] flex flex-col items-center justify-center">
+                <img src="images/ellipse.png" alt="">
+                <h1 class="text-xl font-bold">Ellipse</h1>
+                <p class="text-sm font-normal">Area (A) =  &#x213C;ab</p>
+                <div class="flex gap-2 items-center justify-center">
+                    <input id="value-of-a" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="a">
+                    <span>cm</span>
+                    <input id="value-of-b" class="w-full border border-gray-400 outline-none p-2" type="text" placeholder="b">
+                    <span>cm</span>
+                </div>
+                <p>Area is : <span id="ellipse-span">0</span>cm <sup>2</sup></p>
+                <button onclick="ellipse()" class="w-full bg-blue-700 py-3 text-white font-semibold">Calculation</button>
+            </div>
+        </div>
+        <div class="w-[350px] border-2 border-gray-500 rounded-xl h-screen" id="calculation-area">
+            <p class="text-xl border-gray-500 decoration-solid decoration-1 underline text-center">Area Calculation</p>
+        </div>
+    </main>
+    <footer></footer>
+
+    <script src="js/triangle.js"></script>
+    <script src="js/rectangle.js"></script>
+    <script src="js/parallelogram.js"></script>
+    <script src="js/rhombus.js"></script>
+    <script src="js/pentagon.js"></script>
+    <script src="js/ellipse.js"></script>
+
+</body>
+</html>
